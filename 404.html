@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AutoLab 现场勘查</title>
+  <script>
+    // GitHub Pages 404 回退：将所有路径重定向到正确的 HashRouter 入口
+    // 这个文件处理 GitHub Pages 不支持 SPA 路由的问题
+    var segment = 1;
+    var path = window.location.pathname.split('/');
+    var redirect = '/autolab-survey/';
+
+    // 检查是否在 autolab-survey 子路径下
+    if (path.indexOf('autolab-survey') !== -1) {
+      redirect = '/autolab-survey/';
+    }
+
+    window.location.replace(
+      window.location.origin + redirect + '#/' +
+      path.slice(segment).join('/').replace(/\/+/g, '/').replace(/^\/|\/$/g, '') +
+      window.location.search +
+      window.location.hash
+    );
+  </script>
+</head>
+<body>
+  <p>正在跳转...</p>
+</body>
+</html>
